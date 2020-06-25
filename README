@@ -1,0 +1,23 @@
+Travel Map
+
+Do projektu użyłem następujące zewnętrzne biblioteki:
+ -JavaFX 11.0.2 (interface, obsługa Scene Builder
+ -JavaJDBC    	(łącznik z bazą danych SQLite)
+oraz StyleSheet:
+ -map.css (http://hg.openjdk.java.net/openjfx/8u-dev/rt/file/36a59c629605/apps/scenebuilder/samples/AirportApp/src/airportapp/airportapp.css)
+
+W foderze MapsFXML znajdują się następujące klasy:
+-Main                  (rozpoczyna działanie całej aplikacji i ustawia jako startową scenę MenuView.)
+-menuController        + menuController.fxml (małe menu)
+-mapController         + mapView.fxml (klasa która ubsługuje całą graficzną, interaktywną część oraz posiada klasę MapClass)
+-welcomeController     + welcomeView.fxml (wyskakujące okno z instruckją do programu)
+-MapClass              (inicjuje klasę SQLite, by odczytać dane z bazy, oraz inicjuje listę PlaceList<PlaceClass>)
+-SQLite                (łączy się za pomocą sqlite:JBDC z bazą danych SQLite.db wykonuje zapytania na początku oraz w trakcie programu)
+-PlaceClass            (przechowuje informacje o miejscu)
+-showPlaceController   + showPlaceView.fxml ( do wyświetlania informacji o miejscu)
+-managePlaceController + managePlaceView.fxml ( do dodawania/edycji informacji o miejscu)
+
+
+Możliwa potrzeba uruchamiania pliku w następujący sposób
+java --module-path /path/to/javafx-sdk-11.0.2/lib --add-modules javafx.controls,javafx.fxml -jar MapsFXML.jar 
+
